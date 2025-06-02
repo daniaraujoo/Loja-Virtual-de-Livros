@@ -1,0 +1,9 @@
+{
+  "produtos": [
+    { "id": 1, "titulo": "Percy Jackson e o Ladrão de Raios", "preco": 59.9, "estoque": 127 },
+    { "id": 2, "titulo": "Caraval", "preco": 44.9, "estoque": 103 },
+    { "id": 3, "titulo": "Harry Potter", "preco": 54.9, "estoque": 113 }
+  ],
+  "pedidos": []
+}
+
