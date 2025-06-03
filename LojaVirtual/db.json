@@ -1,9 +1,45 @@
 {
   "produtos": [
-    { "id": 1, "titulo": "Percy Jackson e o Ladrão de Raios", "preco": 59.9, "estoque": 127 },
-    { "id": 2, "titulo": "Caraval", "preco": 44.9, "estoque": 103 },
-    { "id": 3, "titulo": "Harry Potter", "preco": 54.9, "estoque": 113 }
+    {
+      "id": 1,
+      "titulo": "Percy Jackson e o Ladrão de Raios",
+      "preco": 59.9,
+      "estoque": 127
+    },
+    {
+      "id": 2,
+      "titulo": "Caraval",
+      "preco": 34.9,
+      "estoque": 103
+    },
+    {
+      "id": 3,
+      "titulo": "Harry Potter",
+      "preco": 54.9,
+      "estoque": 113
+    }
   ],
-  "pedidos": []
+  "pedidos": [
+    {
+      "nome": "Danielle Santana Araujo",
+      "email": "danielle@gmail.com",
+      "data": "2025-06-03T01:32:58.008Z",
+      "itens": [
+        {
+          "id": 1,
+          "titulo": "Percy Jackson e o Ladrão de Raios",
+          "preco": 59.9,
+          "quantidade": 2
+        },
+        {
+          "id": 2,
+          "titulo": "Caraval",
+          "preco": 34.9,
+          "quantidade": 1
+        }
+      ],
+      "total": "154.70",
+      "id": 1
+    }
+  ]
 }
-
