@@ -4,7 +4,7 @@
       "id": 1,
       "titulo": "Percy Jackson e o Ladrão de Raios",
       "preco": 59.9,
-      "estoque": 127,
+      "estoque": 125,
       "imagem": "img/percy.jpg"
     },
     {
@@ -32,14 +32,14 @@
       "id": 5,
       "titulo": "A Breve Vida de Bree Tanner",
       "preco": 49.9,
-      "estoque": 97,
+      "estoque": 96,
       "imagem": "img/bree.jpg"
     },
     {
       "id": 6,
       "titulo": "Crepúsculo",
       "preco": 59.9,
-      "estoque": 156,
+      "estoque": 154,
       "imagem": "img/crepusculo.jpg"
     },
     {
@@ -247,6 +247,82 @@
       ],
       "total": "52.90",
       "id": 10
+    },
+    {
+      "nome": "Amélia Almeida",
+      "telefone": "(61) 3333-4541",
+      "endereco": "Rua 14",
+      "cidade": "Brasília",
+      "estado": "DF",
+      "formaPagamento": "pix",
+      "data": "2025-06-05T15:57:08.246Z",
+      "itens": [
+        {
+          "id": 6,
+          "titulo": "Crepúsculo",
+          "preco": 59.9,
+          "quantidade": 2
+        }
+      ],
+      "total": "119.80",
+      "id": 11
+    },
+    {
+      "nome": "Amélia Almeida",
+      "telefone": "(61) 9999-8888",
+      "endereco": "Rua 13",
+      "cidade": "Brasília",
+      "estado": "DF",
+      "formaPagamento": "pix",
+      "data": "2025-06-05T16:03:18.825Z",
+      "itens": [
+        {
+          "id": 1,
+          "titulo": "Percy Jackson e o Ladrão de Raios",
+          "preco": 59.9,
+          "quantidade": 1
+        }
+      ],
+      "total": "59.90",
+      "id": 12
+    },
+    {
+      "nome": "Alice Costa",
+      "telefone": "(61) 9999-8888",
+      "endereco": "Rua 14",
+      "cidade": "Brasília",
+      "estado": "DF",
+      "formaPagamento": "pix",
+      "data": "2025-06-05T16:04:30.718Z",
+      "itens": [
+        {
+          "id": 1,
+          "titulo": "Percy Jackson e o Ladrão de Raios",
+          "preco": 59.9,
+          "quantidade": 1
+        }
+      ],
+      "total": "59.90",
+      "id": 13
+    },
+    {
+      "nome": "Danielle Santana Araujo",
+      "telefone": "(62) 4545-8787",
+      "endereco": "Rua 12",
+      "cidade": "Brasília",
+      "estado": "DF",
+      "formaPagamento": "pix",
+      "data": "2025-06-05T16:54:54.779Z",
+      "itens": [
+        {
+          "id": 5,
+          "titulo": "A Breve Vida de Bree Tanner",
+          "preco": 49.9,
+          "quantidade": 1
+        }
+      ],
+      "total": "49.90",
+      "id": 14
     }
   ]
 }

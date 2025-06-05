@@ -11,10 +11,11 @@ document.addEventListener("DOMContentLoaded", function () {
   let html = `<p><strong>Nome do cliente:</strong> ${pedido.nome}</p>`;
   html += `<p><strong>Data do pedido:</strong> ${new Date(pedido.data).toLocaleString()}</p>`;
   html += `<p><strong>Total:</strong> R$ ${Number(pedido.total).toFixed(2)}</p>`;
-  html += `<h5 class="mt-4">Itens do pedido:</h5><ul class="list-group list-group-flush text-start">`;
+  html += `<h5 class="mt-4">Itens do pedido:</h5><ul>`;
+
 
   pedido.itens.forEach(item => {
-    html += `<li class="list-group-item">${item.titulo} — Quantidade: ${item.quantidade}</li>`;
+    html += `<li>${item.titulo} — Quantidade: ${item.quantidade}</li>`;
   });
 
   html += "</ul>";
