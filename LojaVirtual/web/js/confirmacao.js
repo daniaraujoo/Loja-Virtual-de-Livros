@@ -1,28 +1,22 @@
-const container = document.getElementById("detalhes-pedido");
+document.addEventListener("DOMContentLoaded", function () {
+  const container = document.getElementById("detalhes-pedido");
 
-fetch("http://localhost:3000/pedidos?_sort=id&_order=desc&_limit=1")
-  .then(res => res.json())
-  .then(pedidos => {
-    if (pedidos.length === 0) {
-      container.innerHTML = "<p>Nenhum pedido encontrado.</p>";
-      return;
-    }
+  const pedido = JSON.parse(localStorage.getItem("pedidoFinalizado"));
 
-    const pedido = pedidos[0];
-    let html = `<p><strong>Data do pedido:</strong> ${pedido.data}</p>`;
-    html += `<p><strong>Total:</strong> R$ ${pedido.total.toFixed(2)}</p>`;
-    html += `<h5 class="mt-3">Itens do pedido:</h5><ul>`;
+  if (!pedido || !pedido.itens) {
+    container.innerHTML = "<p>Não foi possível carregar os detalhes do pedido.</p>";
+    return;
+  }
 
-    // Busca os títulos dos livros para exibir
-    fetch("http://localhost:3000/produtos")
-      .then(res => res.json())
-      .then(produtos => {
-        pedido.itens.forEach(item => {
-          const produto = produtos.find(p => p.id === item.id);
-          html += `<li>${produto.titulo} — Quantidade: ${item.quantidade}</li>`;
-        });
+  let html = `<p><strong>Nome do cliente:</strong> ${pedido.nome}</p>`;
+  html += `<p><strong>Data do pedido:</strong> ${new Date(pedido.data).toLocaleString()}</p>`;
+  html += `<p><strong>Total:</strong> R$ ${Number(pedido.total).toFixed(2)}</p>`;
+  html += `<h5 class="mt-4">Itens do pedido:</h5><ul class="list-group list-group-flush text-start">`;
 
-        html += "</ul>";
-        container.innerHTML = html;
-      });
+  pedido.itens.forEach(item => {
+    html += `<li class="list-group-item">${item.titulo} — Quantidade: ${item.quantidade}</li>`;
   });
+
+  html += "</ul>";
+  container.innerHTML = html;
+});

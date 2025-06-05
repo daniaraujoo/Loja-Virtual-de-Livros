@@ -11,19 +11,78 @@
   <div class="container mt-5">
     <h1 class="mb-4">Finalizar Pedido</h1>
     <form id="form-finalizar">
-      <div class="mb-3">
-        <label for="nome" class="form-label">Nome completo</label>
-        <input type="text" class="form-control" id="nome" required />
+      <h4>Dados do Cliente</h4>
+      <div class="row">
+        <div class="mb-3 col-md-6">
+          <label for="nome" class="form-label">Nome completo</label>
+          <input type="text" class="form-control" id="nome" required />
+        </div>
+        <div class="mb-3 col-md-6">
+          <label for="telefone" class="form-label">Telefone</label>
+          <input type="tel" class="form-control" id="telefone" required />
+        </div>
+        <div class="mb-3 col-md-2">
+          <label for="endereco" class="form-label">Endereço</label>
+          <input type="text" class="form-control" id="endereco" required />
+        </div>
+        <div class="mb-3 col-md-4">
+          <label for="cidade" class="form-label">Cidade</label>
+          <input type="text" class="form-control" id="cidade" required />
+        </div>
+        <div class="mb-3 col-md-2">
+          <label for="estado" class="form-label">Estado</label>
+          <input type="text" class="form-control" id="estado" required />
+        </div>
       </div>
+
+      <h4 class="mt-4">Forma de Pagamento</h4>
       <div class="mb-3">
-        <label for="email" class="form-label">E-mail</label>
-        <input type="email" class="form-control" id="email" required />
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="pagamento" id="pagamentoCartao" value="cartao" required />
+          <label class="form-check-label" for="pagamentoCartao">Cartão de Crédito</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="pagamento" id="pagamentoPix" value="pix" />
+          <label class="form-check-label" for="pagamentoPix">PIX</label>
+        </div>
       </div>
-      <button type="submit" class="btn btn-primary">Confirmar Pedido</button>
-      <a href="carrinho.html" class="btn btn-secondary ms-2">← Voltar ao Carrinho</a>
+
+      <div id="dados-cartao" class="mt-3" style="display: none;">
+        <h5>Dados do Cartão</h5>
+        <div class="row">
+          <div class="mb-3 col-md-6">
+            <label for="numeroCartao" class="form-label">Número do cartão</label>
+            <input type="text" class="form-control" id="numeroCartao" />
+          </div>
+          <div class="mb-3 col-md-4">
+            <label for="validadeCartao" class="form-label">Validade (MM/AA)</label>
+            <input type="text" class="form-control" id="validadeCartao" />
+          </div>
+          <div class="mb-3 col-md-4">
+            <label for="cvvCartao" class="form-label">CVV</label>
+            <input type="text" class="form-control" id="cvvCartao" />
+          </div>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-success mt-4">Finalizar Pedido</button>
+      <a href="carrinho.html" class="btn btn-secondary mt-4 ms-2">← Voltar ao Carrinho</a>
     </form>
   </div>
 
+  <script>
+    const radioCartao = document.getElementById('pagamentoCartao');
+    const radioPix = document.getElementById('pagamentoPix');
+    const dadosCartao = document.getElementById('dados-cartao');
+
+    function toggleCartaoFields() {
+      dadosCartao.style.display = radioCartao.checked ? 'block' : 'none';
+    }
+
+    radioCartao.addEventListener('change', toggleCartaoFields);
+    radioPix.addEventListener('change', toggleCartaoFields);
+  </script>
+  
   <script src="js/finalizar.js"></script>
 </body>
 </html>

@@ -7,7 +7,8 @@ fetch("http://localhost:3000/produtos")
       const card = document.createElement("div");
       card.className = "col-md-4 mb-4";
       card.innerHTML = `
-        <div class="card h-100">
+        <div class="card h-100 livro-card">
+          <img src="${produto.imagem}" class="card-img-top" alt="${produto.titulo}">
           <div class="card-body d-flex flex-column">
             <h5 class="card-title">${produto.titulo}</h5>
             <p class="card-text">Preço: R$ ${produto.preco.toFixed(2)}</p>

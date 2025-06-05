@@ -4,32 +4,81 @@
       "id": 1,
       "titulo": "Percy Jackson e o Ladrão de Raios",
       "preco": 59.9,
-      "estoque": 127
+      "estoque": 127,
+      "imagem": "img/percy.jpg"
     },
     {
       "id": 2,
       "titulo": "Caraval",
       "preco": 34.9,
-      "estoque": 103
+      "estoque": 103,
+      "imagem": "img/caraval.jpg"
     },
     {
       "id": 3,
       "titulo": "Harry Potter",
       "preco": 54.9,
-      "estoque": 113
+      "estoque": 113,
+      "imagem": "img/harry.jpg"
+    },
+    {
+      "id": 4,
+      "titulo": "Marley & Eu",
+      "preco": 32.9,
+      "estoque": 77,
+      "imagem": "img/marley.jpg"
+    },
+    {
+      "id": 5,
+      "titulo": "A Breve Vida de Bree Tanner",
+      "preco": 49.9,
+      "estoque": 97,
+      "imagem": "img/bree.jpg"
+    },
+    {
+      "id": 6,
+      "titulo": "Crepúsculo",
+      "preco": 59.9,
+      "estoque": 156,
+      "imagem": "img/crepusculo.jpg"
+    },
+    {
+      "id": 7,
+      "titulo": "O Pequeno Príncipe",
+      "preco": 44.9,
+      "estoque": 123,
+      "imagem": "img/principe.jpg"
+    },
+    {
+      "id": 8,
+      "titulo": "A Culpa é Das Estrelas",
+      "preco": 59.9,
+      "estoque": 170,
+      "imagem": "img/estrelas.jpg"
+    },
+    {
+      "id": 9,
+      "titulo": "Quem é Você, Alasca?",
+      "preco": 52.9,
+      "estoque": 143,
+      "imagem": "img/alasca.jpg"
     }
   ],
   "pedidos": [
     {
-      "nome": "Danielle Santana Araujo",
-      "email": "danielle@gmail.com",
-      "data": "2025-06-03T01:32:58.008Z",
+      "nome": "Carol Andrade",
+      "telefone": "(61) 9999-8888",
+      "endereco": "Rua 13",
+      "cidade": "Brasília",
+      "estado": "DF",
+      "formaPagamento": "pix",
+      "data": "2025-06-04T01:28:13.580Z",
       "itens": [
         {
           "id": 1,
           "titulo": "Percy Jackson e o Ladrão de Raios",
           "preco": 59.9,
-          "quantidade": 2
+          "quantidade": 1
         },
         {
           "id": 2,
@@ -38,8 +87,166 @@
           "quantidade": 1
         }
       ],
-      "total": "154.70",
-      "id": 1
+      "total": "94.80",
+      "id": 2
+    },
+    {
+      "nome": "Geovanna Freitas",
+      "telefone": "(61) 3333-4541",
+      "endereco": "Rua 03",
+      "cidade": "Bandeirante",
+      "estado": "DF",
+      "formaPagamento": "cartao",
+      "data": "2025-06-04T02:50:40.207Z",
+      "itens": [
+        {
+          "id": 3,
+          "titulo": "Harry Potter",
+          "preco": 54.9,
+          "quantidade": 1
+        }
+      ],
+      "total": "54.90",
+      "id": 3
+    },
+    {
+      "nome": "Vitória Guerra",
+      "telefone": "(62) 4545-8787",
+      "endereco": "Rua 10",
+      "cidade": "Riacho Fundo",
+      "estado": "DF",
+      "formaPagamento": "pix",
+      "data": "2025-06-04T03:32:29.653Z",
+      "itens": [
+        {
+          "id": 5,
+          "titulo": "A Breve Vida de Bree Tanner",
+          "preco": 49.9,
+          "quantidade": 1
+        },
+        {
+          "id": 8,
+          "titulo": "A Culpa é Das Estrelas",
+          "preco": 59.9,
+          "quantidade": 1
+        }
+      ],
+      "total": "109.80",
+      "id": 4
+    },
+    {
+      "nome": "Bruno Guimarães",
+      "telefone": "(62) 1234-5678",
+      "endereco": "Rua 34",
+      "cidade": "Samambaia",
+      "estado": "DF",
+      "formaPagamento": "pix",
+      "data": "2025-06-04T16:10:30.938Z",
+      "itens": [
+        {
+          "id": 8,
+          "titulo": "A Culpa é Das Estrelas",
+          "preco": 59.9,
+          "quantidade": 1
+        }
+      ],
+      "total": "59.90",
+      "id": 5
+    },
+    {
+      "nome": "Hellen Oliveira",
+      "telefone": "(62) 1234-5678",
+      "endereco": "Rua 12",
+      "cidade": "Taguatinga",
+      "estado": "DF",
+      "formaPagamento": "pix",
+      "data": "2025-06-04T16:36:37.057Z",
+      "itens": [
+        {
+          "id": 8,
+          "titulo": "A Culpa é Das Estrelas",
+          "preco": 59.9,
+          "quantidade": 1
+        }
+      ],
+      "total": "59.90",
+      "id": 6
+    },
+    {
+      "nome": "Danielle Santana Araujo",
+      "telefone": "(62) 4545-8787",
+      "endereco": "Rua 10",
+      "cidade": "Brasília",
+      "estado": "DF",
+      "formaPagamento": "pix",
+      "data": "2025-06-04T16:37:57.850Z",
+      "itens": [
+        {
+          "id": 9,
+          "titulo": "Quem é Você, Alasca?",
+          "preco": 52.9,
+          "quantidade": 1
+        }
+      ],
+      "total": "52.90",
+      "id": 7
+    },
+    {
+      "nome": "Bruno Guimarães",
+      "telefone": "(62) 4545-8787",
+      "endereco": "Rua 12",
+      "cidade": "Brasília",
+      "estado": "DF",
+      "formaPagamento": "pix",
+      "data": "2025-06-04T16:39:49.619Z",
+      "itens": [
+        {
+          "id": 7,
+          "titulo": "O Pequeno Príncipe",
+          "preco": 44.9,
+          "quantidade": 1
+        }
+      ],
+      "total": "44.90",
+      "id": 8
+    },
+    {
+      "nome": "Alice Costa",
+      "telefone": "(62) 4545-8787",
+      "endereco": "Rua 34",
+      "cidade": "Brasília",
+      "estado": "DF",
+      "formaPagamento": "pix",
+      "data": "2025-06-05T11:07:33.944Z",
+      "itens": [
+        {
+          "id": 8,
+          "titulo": "A Culpa é Das Estrelas",
+          "preco": 59.9,
+          "quantidade": 1
+        }
+      ],
+      "total": "59.90",
+      "id": 9
+    },
+    {
+      "nome": "Alice Costa",
+      "telefone": "(62) 4545-8787",
+      "endereco": "Rua 34",
+      "cidade": "Brasília",
+      "estado": "DF",
+      "formaPagamento": "cartao",
+      "data": "2025-06-05T11:16:45.803Z",
+      "itens": [
+        {
+          "id": 9,
+          "titulo": "Quem é Você, Alasca?",
+          "preco": 52.9,
+          "quantidade": 1
+        }
+      ],
+      "total": "52.90",
+      "id": 10
     }
   ]
 }

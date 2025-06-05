@@ -1,42 +1,59 @@
-const carrinhoContainer = document.getElementById("carrinho-itens");
-const totalContainer = document.getElementById("total-carrinho");
+const tabelaCarrinho = document.getElementById("tabela-carrinho");
+const totalElement = document.getElementById("total");
 
-function carregarCarrinho() {
-  const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
 
-  if (carrinho.length === 0) {
-    carrinhoContainer.innerHTML = "<p>Seu carrinho está vazio.</p>";
-    totalContainer.innerText = "R$ 0,00";
-    return;
-  }
+function atualizarCarrinho() {
+  tabelaCarrinho.innerHTML = "";
+  let total = 0;
 
   fetch("http://localhost:3000/produtos")
     .then(res => res.json())
     .then(produtos => {
-      let total = 0;
-      let html = '<table class="table"><thead><tr><th>Livro</th><th>Preço</th><th>Quantidade</th><th>Subtotal</th></tr></thead><tbody>';
-
       carrinho.forEach(item => {
         const produto = produtos.find(p => p.id === item.id);
-        if (produto) {
-          const subtotal = produto.preco * item.quantidade;
-          total += subtotal;
-          html += `
-            <tr>
-              <td>${produto.titulo}</td>
-              <td>R$ ${produto.preco.toFixed(2)}</td>
-              <td>${item.quantidade}</td>
-              <td>R$ ${subtotal.toFixed(2)}</td>
-            </tr>
-          `;
-        }
+        const subtotal = produto.preco * item.quantidade;
+        total += subtotal;
+
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td><img src="${produto.imagem}" alt="${produto.titulo}" class="img-fluid"></td>
+          <td>${produto.titulo}</td>
+          <td>R$ ${produto.preco.toFixed(2)}</td>
+          <td>
+            <button class="btn btn-sm btn-outline-primary me-1" onclick="alterarQuantidade(${item.id}, -1)">-</button>
+            ${item.quantidade}
+            <button class="btn btn-sm btn-outline-primary ms-1" onclick="alterarQuantidade(${item.id}, 1)">+</button>
+          </td>
+          <td>R$ ${subtotal.toFixed(2)}</td>
+          <td>
+            <button class="btn btn-sm btn-danger" onclick="removerDoCarrinho(${item.id})">Remover</button>
+          </td>
+        `;
+        tabelaCarrinho.appendChild(row);
       });
 
-      html += `</tbody></table>`;
-      carrinhoContainer.innerHTML = html;
-      totalContainer.innerText = `R$ ${total.toFixed(2)}`;
+      totalElement.textContent = total.toFixed(2);
     });
 }
 
-// Executa ao carregar a página
-window.onload = carregarCarrinho;
+function alterarQuantidade(id, delta) {
+  const item = carrinho.find(p => p.id === id);
+  if (!item) return;
+
+  item.quantidade += delta;
+  if (item.quantidade <= 0) {
+    carrinho = carrinho.filter(p => p.id !== id);
+  }
+
+  localStorage.setItem("carrinho", JSON.stringify(carrinho));
+  atualizarCarrinho();
+}
+
+function removerDoCarrinho(id) {
+  carrinho = carrinho.filter(p => p.id !== id);
+  localStorage.setItem("carrinho", JSON.stringify(carrinho));
+  atualizarCarrinho();
+}
+
+atualizarCarrinho();
